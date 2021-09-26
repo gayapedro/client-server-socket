@@ -53,7 +53,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             elif message['opt'] == 4:
               valido = adicionar_candidato(message['payload'])
               if valido:
-                print("Candidato " + message['payload'] + " por", addr)
+                print("Candidato " + message['payload'] + " adicionado por", addr)
               conn.sendall(encode(valido))
             elif message['opt'] == 5:
               print("Finalização solicitada por", addr)
